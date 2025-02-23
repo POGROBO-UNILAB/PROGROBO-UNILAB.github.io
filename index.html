@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGROBÔ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a192f;
+            color: #8892b0;
+            line-height: 1.6;
+        }
+
+        /* Header Hero */
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)),
+                        url('img/cap.jpg') no-repeat center/cover; 
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #64ffda;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+h1 span {
+  display: inline-block;
+  animation: bounce 3s ease infinite;
+}
+
+h1 span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+h1 span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+h1 span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+h1 span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+h1 span:nth-child(6) {
+  animation-delay: 1s;
+}
+
+h1 span:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+h1 span:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+h1 span:nth-child(9) {
+  animation-delay: 1.6s;
+}
+
+h1 span:nth-child(10) {
+  animation-delay: 1.8s;
+}
+
+h1 span:nth-child(11) {
+  animation-delay: 2s;
+}
+
+h1 span:nth-child(12) {
+  animation-delay: 2.2s;
+}
+
+h1 span:nth-child(13) {
+  animation-delay: 2.4s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(-2rem);
+  }
+
+  20% {
+    transform: translateY(0);
+  }
+}
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #64ffda;
+            margin-bottom: 3rem;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #112240;
+            padding: 2rem;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: #ccd6f6;
+            margin-bottom: 1rem;
+        }
+
+        /* Tecnologias */
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .tech-icon {
+            font-size: 4rem;
+            color: #64ffda;
+        }
+
+        /* Equipe */
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 2px solid #64ffda;
+        }
+
+        /* Footer */
+        footer {
+            background: #020c1b;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #8892b0;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #64ffda;
+        }
+        .carousel {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 80%;
+}
+
+.navigation {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation label {
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#slide1:checked ~ .slides .slide:nth-child(1),
+#slide2:checked ~ .slides .slide:nth-child(2),
+#slide3:checked ~ .slides .slide:nth-child(3) {
+  display: block;
+}
+.funding-logos img {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+  margin-top: 1em;
+}
+
+.funding-logos img:last-child {
+  margin-right: 0; /* Remove a margem do último logo */
+}
+
+footer hr {
+  border-top: 1px solid #cccccca9; /* Adjust color and thickness as needed */
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>
+                <span>P</span>
+                <span>R</span>
+                <span>O</span>
+                <span>G</span>
+                <span>R</span>
+                <span>O</span>
+                <span>B</span>
+                <span>Ô</span>
+              </h1>
+
+            <h3>Ensino de Programação e Robótica nas Escolas Públicas</h3>
+            <div class="tech-icons">
+                <i class="fas fa-robot"></i>
+                <i class="fas fa-microchip"></i>
+                <i class="fas fa-cube"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2 class="section-title">Sobre o Projeto</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>🚀 Inovação Educacional</h3>
+                <p>O PROGROBÔ é um projeto interdisciplinar que une tecnologia, engenharia e criatividade para desenvolver soluções robóticas inovadoras.</p>
+            </div>
+            <div class="card">
+                <h3>🧠 Aprendizado Prático</h3>
+                <p>Metodologia hands-on com prototipagem rápida, os alunos do PROGROBÔ aprendem programação de microcontroladores e desenvolvimento de sistemas autônomos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Tecnologias Utilizadas</h2>
+        <div class="tech-icons">
+            <i class="fab fa-raspberry-pi"></i>
+            <i class="fas fa-satellite-dish"></i>
+            <i class="fas fa-brain"></i>
+        </div>
+        <div class="carousel">
+            <input type="radio" name="carousel" id="slide1" checked>
+            <input type="radio" name="carousel" id="slide2">
+            <input type="radio" name="carousel" id="slide3">
+            <div class="slides">
+              <div class="slide">
+                <img src="img/one.webp" alt="Slide 1">
+              </div>
+              <div class="slide">
+                <img src="img/two.webp" alt="Slide 2">
+              </div>
+              <div class="slide">
+                <img src="img/three.webp" alt="Slide 3">
+              </div>
+    </section>   
+<section class="section">
+        
+        <div class="card-grid">
+            <div class="card">
+                <h3>🖥️ Tecnologia Educacional</h3>
+                <p>No PROGROBÔ, a criatividade e a inovação ganham vida com o Tinkercad, uma plataforma online gratuita de design 3D e eletrônica!</p>
+            </div>
+            <div class="card">
+                <h3>🦾 Embarcados</h3>
+                <p>Que tal por a mão na massa? As tecnologias produzidas por empresas como a Arduino, possibilitam um aprendizado prático sobre os principais conceitos de engenharia!</p>
+            </div>
+            <div class="card">
+                <h3>🤖 Um futuro ecologico</h3>
+                <p>Com o Projeto Aruana, podemos criar a maior rede de monitoramento de gases de efeito estufa do Brasil!</p>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <h2 class="section-title">Equipe</h2>
+        <div class="team">
+            <div class="team-member">
+                <img src="https://sig.unilab.edu.br/sigaa/img/no_picture.png" alt="ALLBERSON BRUNO DE OLIVEIRA DANTAS">
+                <h3>Allberson Bruno de Oliveira Dantas</h3>
+                <p>Coordenador (Docente)</p>
+            </div>
+            <div class="team-member">
+                <img src="https://sig.unilab.edu.br/shared/verFoto?idFoto=1307913&key=82bf3eb3eca9e7dd269263dbf8258f0b" alt="FRANCISCO CLEITON DA SILVA NASCIMENTO">
+                <h3>Francisco Cleiton da Silva Nascimento</h3>
+                <p>Bolsista Voluntário</p>
+            </div>
+    </section>
+
+    <footer>
+      <p>Apoio:</p>
+      <div class="funding-logos">
+        <img src="img/logUnilab.png" alt="Universidade Logo">
+        <img src="img/log1.png" alt="Organização 2 Logo">
+      </div>
+      <hr>  <!-- This is the horizontal line -->
+      <p>© 2025 PROGOBÔ - Todos os direitos reservados</p>
+    </footer>    
+    <script>
+        // Seleciona os elementos do carrossel
+        const slides = document.querySelectorAll('.slide');
+        const navigationLabels = document.querySelectorAll('.navigation label');
+        const radios = document.querySelectorAll('input[name="carousel"]');
+
+        // Define o tempo de transição entre os slides (em milissegundos)
+        const slideInterval = 3000;
+
+        // Função para avançar para o próximo slide
+        function nextSlide() {
+            // Encontra o slide atual
+            const currentSlide = document.querySelector('.slide:not([style*="display: none"])');
+
+            // Encontra o próximo slide
+            const nextSlideIndex = Array.from(slides).indexOf(currentSlide) + 1;
+            const nextSlide = slides[nextSlideIndex % slides.length];
+
+            // Esconde o slide atual e mostra o próximo slide
+            currentSlide.style.display = 'none';
+            nextSlide.style.display = 'block';
+
+            // Atualiza a navegação
+            navigationLabels[nextSlideIndex % slides.length].classList.add('active');
+            navigationLabels[nextSlideIndex % slides.length - 1].classList.remove('active');
+        }
+
+        // Inicializa o carrossel
+        let intervalId = setInterval(nextSlide, slideInterval);
+
+        // Adiciona eventos de clique aos botões de navegação
+        navigationLabels.forEach((label, index) => {
+            label.addEventListener('click', () => {
+                // Limpa o intervalo anterior
+                clearInterval(intervalId);
+
+                // Esconde todos os slides
+                slides.forEach(slide => slide.style.display = 'none');
+
+                // Mostra o slide selecionado
+                slides[index].style.display = 'block';
+
+                // Atualiza a navegação
+                navigationLabels.forEach(l => l.classList.remove('active'));
+                label.classList.add('active');
+
+                // Reinicia o intervalo
+                intervalId = setInterval(nextSlide, slideInterval);
+            });
+        });
+    </script>
+</body>
+</html>
